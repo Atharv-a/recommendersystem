@@ -8,3 +8,12 @@
 -Type movie name in the search box.
 
 ![img1](https://user-images.githubusercontent.com/95877070/233489186-34f2132c-0614-4105-adc6-0885110cb1f6.png)
+
+-Then Click on recommend button.
+
+![img2](https://user-images.githubusercontent.com/95877070/233489354-217145fa-a613-4058-afe6-a9711ac077ca.png)
+
+Five most similiar movies will be shown to you.
+
+![img3](https://user-images.githubusercontent.com/95877070/233489516-0c4ff7dc-e281-4269-916e-d682e26b75c0.png)
+
