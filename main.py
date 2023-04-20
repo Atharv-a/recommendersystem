@@ -23,7 +23,7 @@ def fetch_poster(m_i):
     return 'https://image.tmdb.org/t/p/w500/'+data['poster_path']
 
 
-os.chdir('/home/atharva/c++ project/recommender_sys')
+# os.chdir('/home/atharva/c++ project/recommender_sys')
 st.set_page_config(layout="wide")
 
 movies_list= pickle.load(open('movies.pkl','rb'))
