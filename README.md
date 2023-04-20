@@ -13,7 +13,7 @@
 
 ![img2](https://user-images.githubusercontent.com/95877070/233489354-217145fa-a613-4058-afe6-a9711ac077ca.png)
 
-Five most similiar movies will be shown to you.
+-Five most similiar movies will be shown to you.
 
 ![img3](https://user-images.githubusercontent.com/95877070/233489516-0c4ff7dc-e281-4269-916e-d682e26b75c0.png)
 
