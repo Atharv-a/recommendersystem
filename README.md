@@ -6,4 +6,5 @@
 - Model fetches five most similar movies with respect to one entered and prints their names with respective posters fetched with the help of Tmdb API.
 
 -Type movie name in the search box.
-![alt text](https://github.com/Atharv-a/recommendersystem/images/img1.png?raw=true)
+
+![img1](https://user-images.githubusercontent.com/95877070/233489186-34f2132c-0614-4105-adc6-0885110cb1f6.png)
