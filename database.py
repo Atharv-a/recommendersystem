@@ -4,6 +4,7 @@ from pymongo.server_api import ServerApi
 import pickle
 import pandas as pd
 
+
 uri = "mongodb+srv://Atharva:0987A@cluster.cpafhoe.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
