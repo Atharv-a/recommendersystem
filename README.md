@@ -2,10 +2,10 @@
 - Built a recommender system based on content based filtering.
 - Preprocessed Dataset of Tmdb with 5000 movies and created Tags for all movies.
 - With help of scikit-learn Converted all tags to vector and calculated cosine distance of all vectors with respect to each other to find most familiar movies.
-- Used streamlit to create a web application for deploying Machine learing model.
+- Used Render to create a web application for deploying Machine learing model.
 - Application fetches five most similar movies with respect to one entered and prints their names with respective posters.Posters are fetched with the help of Tmdb API.
 
-click https://atharv-a-recommendersystem-main-jsxcnr.streamlit.app/ to get site.
+click https://movie-recommender-0yro.onrender.com to get site.
 
 Type movie name in the search box.
 
