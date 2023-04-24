@@ -3,7 +3,7 @@
 - Preprocessed Dataset of Tmdb with 5000 movies and created Tags for all movies.
 - With help of scikit-learn Converted all tags to vector and calculated cosine distance of all vectors with respect to each other to find most familiar movies.
 - Created a database on Mongodb to store all cosine distance and to fetch data for a movie whenever a recommendation has to be made. 
-- Used host to create a web application for deploying Movie recommender system.
+- Used Render to host a web application for deploying Movie recommender system.
 - Application fetches five most similar movies with respect to one entered and prints their names with respective posters.Posters are fetched with the help of Tmdb API.
 
 click https://movie-recommender-0yro.onrender.com to try site.
