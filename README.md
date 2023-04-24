@@ -6,7 +6,7 @@
 - Used Render to host a web application for deploying Movie recommender system.
 - Application fetches five most similar movies with respect to one entered and prints their names with respective posters.Posters are fetched with the help of Tmdb API.
 
-click https://movie-recommender-0yro.onrender.com to try site.
+click https://movie-recommender-0yro.onrender.com to try application.
 
 Type movie name in the search box.
 
