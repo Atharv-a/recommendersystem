@@ -5,6 +5,7 @@ import requests
 from dotenv import load_dotenv
 import psycopg2,os
 from psycopg2.extras import RealDictCursor
+
 load_dotenv()
 
 connection=psycopg2.connect(host=os.getenv('hostname'),
