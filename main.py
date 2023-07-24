@@ -2,29 +2,23 @@ import streamlit as st
 import pandas as pd
 import pickle
 import requests
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
+import psycopg2,os
+from psycopg2.extras import RealDictCursor
+load_dotenv()
 
+connection=psycopg2.connect(host=os.getenv('hostname'),
+                            database=os.getenv('database'),
+                            user=os.getenv('user'),
+                            password=os.getenv('password'),
+                            cursor_factory=RealDictCursor)
 
-uri = "mongodb+srv://Atharva:0987A@cluster.cpafhoe.mongodb.net/?retryWrites=true&w=majority"
-
-# Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
-
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
-
-db=client['Movie-recommender']
-collection=db['distance']
+cursor=connection.cursor()
 
 def recommend(movie):
     index=int(movies[movies['title']==movie].index[0])
-    distances=collection.find_one({"_id":index})
-    distances=distances['dis']
+    cursor.execute('SELECT dis FROM movie_data Where id=%s',(index,))
+    distances=cursor.fetchone()['dis']
     m_list=sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:6]
     recommend_m=[]
     recommend_m_p=[]

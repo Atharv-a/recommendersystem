@@ -1,34 +1,30 @@
-
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
+import psycopg2
 import pickle
-import pandas as pd
+from psycopg2.extras import RealDictCursor
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+connection=psycopg2.connect(host=os.getenv('hostname'),
+                            database=os.getenv('database'),
+                            user=os.getenv('user'),
+                            password=os.getenv('password'),
+                            cursor_factory=RealDictCursor)
 
 
-uri = "mongodb+srv://Atharva:0987A@cluster.cpafhoe.mongodb.net/?retryWrites=true&w=majority"
+cursor=connection.cursor()
 
-# Create a new client and connect to the server
-client = MongoClient(uri, server_api=ServerApi('1'))
+cursor.execute(''' CREATE TABLE IF NOT EXISTS movie_data(
+                        id  INTEGER NOT NULL PRIMARY KEY,
+                        dis REAL[] NOT NULL
+)''') 
 
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
+dis=pickle.load(open(r'C:\Users\Ayush\projects\recommendersystem\dis.pkl','rb'))
 
-dis=pickle.load(open('/home/atharva/c++project/recommender_sys/dis.pkl','rb'))
+for i in range(len(dis)):
+    cursor.execute("INSERT INTO movie_data(id,dis) VALUES(%s,%s)",(i,list(dis[i])))
 
-db=client.list_database_names()
-print(db)
-db=client['Movie-recommender']
-collection=db['distance']
-
-for i in range(4806):
-     collection.insert_one({
-          "_id":i,
-          "dis":list(dis[i])
-     })
-
-
+connection.commit()
+cursor.close()
+connection.close()
 
